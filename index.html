@@ -286,6 +286,15 @@
       font-size: 1rem;
     }
 
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
     /* Hero visual panel */
     .hero__visual {
       display: flex;
@@ -582,6 +591,80 @@
       font-size: .875rem;
       color: var(--muted);
       line-height: 1.65;
+    }
+
+    /* ─── REVIEWS ─── */
+    .reviews__grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .reviews__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .review-card__stars {
+      color: #f5a623;
+      font-size: .9375rem;
+      letter-spacing: 2px;
+    }
+
+    .review-card__text {
+      font-size: .9375rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .review-card__author {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      padding-top: .75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .review-card__avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: .9375rem;
+      flex-shrink: 0;
+    }
+
+    .review-card__name {
+      font-weight: 700;
+      color: var(--text);
+      font-size: .875rem;
+    }
+
+    .review-card__meta {
+      font-size: .8125rem;
+      color: var(--muted);
     }
 
     /* ─── DOCTOR ─── */
@@ -902,7 +985,7 @@
   <header role="banner">
     <nav class="navbar" aria-label="Основна навігація">
       <div class="container navbar__inner">
-        <a href="/" class="navbar__logo" aria-label="DENT PRO — головна">DENT<span> PRO</span></a>
+        <a href="#" class="navbar__logo" aria-label="DENT PRO — головна">DENT<span> PRO</span></a>
         <a href="https://telegram.me/znahidkawow" class="btn btn-primary navbar__cta" target="_blank" rel="noopener noreferrer" aria-label="Записатись на прийом через Telegram">
           Записатись
         </a>
@@ -945,7 +1028,7 @@
           <div class="hero__visual" aria-hidden="true">
             <div class="hero__card">
               <div class="hero__card-badge">Відкрито</div>
-              <div style="height:150px;border-radius:12px;overflow:hidden;margin-bottom:14px"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Кабінет DENT PRO" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+              <div style="height:150px;border-radius:12px;overflow:hidden;margin-bottom:14px"><video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" style="width:100%;height:100%;object-fit:cover;display:block" aria-label="Кабінет DENT PRO"><source src="https://videos.pexels.com/video-files/6763242/6763242-hd_1280_720_25fps.mp4" type="video/mp4"></video></div>
               <div class="hero__card-header">
                 <div class="hero__card-avatar">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -973,6 +1056,7 @@
                   <span>Гарантія</span>
                 </div>
               </div>
+              <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem;text-align:center">4.9★ на основі відгуків Google</p>
             </div>
           </div>
         </div>
@@ -1114,6 +1198,63 @@
                   <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                   Сертифікований спеціаліст
                 </div>
+                <div class="doctor-card__stat">
+                  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Стерилізація за міжнародним протоколом
+                </div>
+                <div class="doctor-card__stat">
+                  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Сучасне 3D-обладнання
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REVIEWS ─── -->
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__label">Відгуки</span>
+          <h2 class="section__title" id="reviews-title">Що кажуть наші пацієнти</h2>
+          <p class="section__desc">4.9★ рейтинг на основі реальних відгуків Google.</p>
+        </div>
+
+        <div class="reviews__grid">
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+            <p class="review-card__text">"Боялась лікувати зуб роками, а тут навіть не відчула укол анестезії. Лікарка Олена все спокійно пояснила перед процедурою — жодного стресу."</p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">Н</div>
+              <div>
+                <div class="review-card__name">Наталія Р.</div>
+                <div class="review-card__meta">Лікування карієсу</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+            <p class="review-card__text">"Робив імплантацію — переживав більше, ніж треба було. Клініка чиста, обладнання сучасне, все на 3D-знімках показали заздалегідь. Результатом задоволений."</p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">В</div>
+              <div>
+                <div class="review-card__name">В'ячеслав М.</div>
+                <div class="review-card__meta">Імплантація зуба</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+            <p class="review-card__text">"Привела доньку на профогляд — персонал дуже терплячий з дітьми, пояснили кожен крок. Тепер вона сама просить піти до стоматолога."</p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">О</div>
+              <div>
+                <div class="review-card__name">Оксана Д.</div>
+                <div class="review-card__meta">Профілактичний огляд</div>
               </div>
             </div>
           </div>
@@ -1186,7 +1327,7 @@
       <hr class="footer__divider" />
 
       <div class="footer__bottom">
-        <span>© 2024 DENT PRO. Усі права захищено.</span>
+        <span>© 2026 DENT PRO. Усі права захищено.</span>
         <span>Демо-сайт від WOW Studio</span>
       </div>
     </div>
