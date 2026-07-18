@@ -947,6 +947,119 @@
       color: rgba(255,255,255,.35);
     }
 
+    /* ─── TECHNOLOGIES ─── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+    .tech-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+    }
+    .tech-card:hover { box-shadow: var(--shadow-lg); border-color: var(--blue); transform: translateY(-4px); }
+    .tech-card__icon {
+      width: 60px;
+      height: 60px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      font-size: 1.8rem;
+    }
+    .tech-card__title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .tech-card__sub { font-size: .875rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── RESULTS (before/after) ─── */
+    .results__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) { .results__grid { grid-template-columns: repeat(3, 1fr); } }
+    .result-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .result-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .result-card__imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 180px;
+    }
+    .result-card__half {
+      position: relative;
+      overflow: hidden;
+    }
+    .result-card__half img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .result-card__label {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(15,23,42,.75);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .result-card__half--after .result-card__label { background: var(--blue); }
+    .result-card__body { padding: 1.125rem 1.25rem; }
+    .result-card__title { font-family: 'Sora', sans-serif; font-size: .95rem; font-weight: 700; color: var(--text); margin-bottom: .3rem; }
+    .result-card__desc { font-size: .8125rem; color: var(--muted); }
+
+    /* ─── REVIEWS ─── */
+    .reviews__grid-dental {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .reviews__grid-dental { grid-template-columns: repeat(3, 1fr); } }
+    .review-dental {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition);
+    }
+    .review-dental:hover { box-shadow: var(--shadow-md); }
+    .review-dental__stars { color: #f59e0b; font-size: 1rem; margin-bottom: .875rem; letter-spacing: 2px; }
+    .review-dental__text { font-size: .9375rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .review-dental__author { display: flex; align-items: center; gap: .875rem; }
+    .review-dental__avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .review-dental__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .review-dental__name { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .15rem; }
+    .review-dental__meta { font-size: .8rem; color: var(--subtle); }
+
     /* ─── REDUCED MOTION ─── */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -1109,6 +1222,39 @@
       </div>
     </section>
 
+    <!-- ─── TECHNOLOGIES ─── -->
+    <section class="section section-alt" aria-labelledby="tech-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__label">Обладнання</span>
+          <h2 class="section__title" id="tech-title">Технології майбутнього — вже сьогодні</h2>
+          <p class="section__desc">Інвестуємо у найсучасніше обладнання, щоб лікування було швидшим, точнішим і комфортнішим.</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-card__icon">🦷</div>
+            <div class="tech-card__title">CEREC — Коронка за 1 день</div>
+            <div class="tech-card__sub">Проектуємо та фрезеруємо кераміку прямо в клініці. Без тимчасових коронок.</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-card__icon">💡</div>
+            <div class="tech-card__title">Лазерне лікування</div>
+            <div class="tech-card__sub">Лазер замінює бормашину в більшості процедур. Без болю, без анестезії в ряді випадків.</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-card__icon">📡</div>
+            <div class="tech-card__title">Цифровий рентген</div>
+            <div class="tech-card__sub">Знімок за 3 секунди. Доза опромінення у 10 разів менша за плівковий аналог.</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-card__icon">🎯</div>
+            <div class="tech-card__title">3D планування</div>
+            <div class="tech-card__sub">Конусна томографія та 3D-моделювання для точної імплантації та ортодонтії.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── WHY US ─── -->
     <section class="section" aria-labelledby="why-title">
       <div class="container">
@@ -1246,6 +1392,119 @@
               <div>
                 <div class="review-card__name">Оксана Д.</div>
                 <div class="review-card__meta">Профілактичний огляд</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RESULTS ─── -->
+    <section class="section section-alt" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__label">Результати</span>
+          <h2 class="section__title" id="results-title">Реальні клінічні результати</h2>
+          <p class="section__desc">Перетворення посмішок наших пацієнтів говорять самі за себе.</p>
+        </div>
+        <div class="results__grid">
+          <div class="result-card">
+            <div class="result-card__imgs">
+              <div class="result-card__half">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffedbe47add?w=400&q=80&auto=format&fit=crop" alt="До лікування" loading="lazy">
+                <span class="result-card__label">До</span>
+              </div>
+              <div class="result-card__half result-card__half--after">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80&auto=format&fit=crop" alt="Після лікування" loading="lazy">
+                <span class="result-card__label">Після</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__title">Відбілювання + вініри</div>
+              <div class="result-card__desc">Результат за 2 відвідування. Ефект зберігається 3–5 років.</div>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-card__imgs">
+              <div class="result-card__half">
+                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&q=80&auto=format&fit=crop" alt="До лікування" loading="lazy">
+                <span class="result-card__label">До</span>
+              </div>
+              <div class="result-card__half result-card__half--after">
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&q=80&auto=format&fit=crop" alt="Після лікування" loading="lazy">
+                <span class="result-card__label">Після</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__title">Імплантація зубів</div>
+              <div class="result-card__desc">Повне відновлення за 6–8 тижнів. Гарантія 5 років.</div>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-card__imgs">
+              <div class="result-card__half">
+                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&q=80&auto=format&fit=crop" alt="До лікування" loading="lazy">
+                <span class="result-card__label">До</span>
+              </div>
+              <div class="result-card__half result-card__half--after">
+                <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=400&q=80&auto=format&fit=crop" alt="Після лікування" loading="lazy">
+                <span class="result-card__label">Після</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__title">Ортодонтія (брекети)</div>
+              <div class="result-card__desc">Виправлення прикусу за 12–18 місяців. Правильне положення назавжди.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REVIEWS ─── -->
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__label">Відгуки</span>
+          <h2 class="section__title" id="reviews-title">Що кажуть пацієнти</h2>
+          <p class="section__desc">Понад 2000 людей вже обрали DENT PRO. Ось деякі з їхніх відгуків.</p>
+        </div>
+        <div class="reviews__grid-dental">
+          <div class="review-dental">
+            <div class="review-dental__stars">★★★★★</div>
+            <p class="review-dental__text">«Раніше боялась стоматологів так, що відтягувала візит роками. У DENT PRO вперше не відчула жодного дискомфорту — анестезія спрацювала миттєво. Тепер приходжу без страху!»</p>
+            <div class="review-dental__author">
+              <div class="review-dental__avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80&auto=format&fit=crop&crop=face" alt="Аватар Ольги М." loading="lazy">
+              </div>
+              <div>
+                <div class="review-dental__name">Ольга М.</div>
+                <div class="review-dental__meta">Пацієнтка · Google Reviews</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-dental">
+            <div class="review-dental__stars">★★★★★</div>
+            <p class="review-dental__text">«Поставили коронку CEREC прямо в день звернення. Вранці прийшов — ввечері пішов з новим зубом. Якість чудова, не відрізнити від рідного. Лікар пояснював кожен крок.»</p>
+            <div class="review-dental__author">
+              <div class="review-dental__avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&crop=face" alt="Аватар Василя К." loading="lazy">
+              </div>
+              <div>
+                <div class="review-dental__name">Василь К.</div>
+                <div class="review-dental__meta">Постійний пацієнт · TripAdvisor</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-dental">
+            <div class="review-dental__stars">★★★★★</div>
+            <p class="review-dental__text">«Відбілювання перевищило всі очікування — результат у 8 тонів за 1 годину! Уже 3 місяці — біла посмішка тримається. Для побачення чи важливих переговорів — ідеально.»</p>
+            <div class="review-dental__author">
+              <div class="review-dental__avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop&crop=face" alt="Аватар Марини Т." loading="lazy">
+              </div>
+              <div>
+                <div class="review-dental__name">Марина Т.</div>
+                <div class="review-dental__meta">Пацієнтка · Instagram</div>
               </div>
             </div>
           </div>
