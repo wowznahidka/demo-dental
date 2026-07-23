@@ -1461,12 +1461,12 @@
       </div>
     </section>
 
-    <!-- ─── REVIEWS ─── -->
-    <section class="section" aria-labelledby="reviews-title">
+    <!-- ─── REVIEWS DETAILED ─── -->
+    <section class="section" aria-labelledby="reviews-detail-title">
       <div class="container">
         <div class="section__header">
           <span class="section__label">Відгуки</span>
-          <h2 class="section__title" id="reviews-title">Що кажуть пацієнти</h2>
+          <h2 class="section__title" id="reviews-detail-title">Що кажуть пацієнти</h2>
           <p class="section__desc">Понад 2000 людей вже обрали DENT PRO. Ось деякі з їхніх відгуків.</p>
         </div>
         <div class="reviews__grid-dental">
@@ -1512,6 +1512,70 @@
         </div>
       </div>
     </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__label">Питання</span>
+          <h2 class="section__title" id="faq-title">Часті запитання</h2>
+          <p class="section__desc">Відповідаємо чесно і без медичного жаргону.</p>
+        </div>
+        <div style="max-width:720px;margin:44px auto 0">
+
+          <details style="border-bottom:1px solid rgba(0,0,0,.08);padding:0" open>
+            <summary style="cursor:pointer;padding:20px 0;font-size:1rem;font-weight:600;color:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              Боляче лікувати зуб?
+              <span style="font-size:1.3rem;flex-shrink:0;color:var(--blue,#1a6dff)">−</span>
+            </summary>
+            <p style="font-size:.9rem;line-height:1.8;color:#6b7280;padding:0 0 20px">Ні — при сучасній анестезії процедура безболісна. Лікар виконує укол тонкою голкою після нанесення топікального гелю. Якщо ви відчуваєте дискомфорт — скажіть, ми скоригуємо.</p>
+          </details>
+
+          <details style="border-bottom:1px solid rgba(0,0,0,.08);padding:0">
+            <summary style="cursor:pointer;padding:20px 0;font-size:1rem;font-weight:600;color:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              Скільки часу займає процедура?
+              <span style="font-size:1.3rem;flex-shrink:0;color:var(--blue,#1a6dff)">+</span>
+            </summary>
+            <p style="font-size:.9rem;line-height:1.8;color:#6b7280;padding:0 0 20px">Залежить від процедури. Профогляд — 30 хвилин. Лікування карієсу — 45–60 хвилин. Видалення — 20–40 хвилин. Час завжди уточнюється на початку.</p>
+          </details>
+
+          <details style="border-bottom:1px solid rgba(0,0,0,.08);padding:0">
+            <summary style="cursor:pointer;padding:20px 0;font-size:1rem;font-weight:600;color:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              Чи є дитячий прийом?
+              <span style="font-size:1.3rem;flex-shrink:0;color:var(--blue,#1a6dff)">+</span>
+            </summary>
+            <p style="font-size:.9rem;line-height:1.8;color:#6b7280;padding:0 0 20px">Так. Лікар з досвідом роботи з дітьми — терплячо пояснюємо, не поспішаємо. Після першого візиту більшість дітей йдуть без страху.</p>
+          </details>
+
+          <details style="border-bottom:1px solid rgba(0,0,0,.08);padding:0">
+            <summary style="cursor:pointer;padding:20px 0;font-size:1rem;font-weight:600;color:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              Які способи оплати?
+              <span style="font-size:1.3rem;flex-shrink:0;color:var(--blue,#1a6dff)">+</span>
+            </summary>
+            <p style="font-size:.9rem;line-height:1.8;color:#6b7280;padding:0 0 20px">Готівка, всі банківські картки, оплата частинами. Загальну вартість лікування ми озвучуємо до початку роботи — без прихованих доплат.</p>
+          </details>
+
+          <details style="padding:0">
+            <summary style="cursor:pointer;padding:20px 0;font-size:1rem;font-weight:600;color:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              Як записатися?
+              <span style="font-size:1.3rem;flex-shrink:0;color:var(--blue,#1a6dff)">+</span>
+            </summary>
+            <p style="font-size:.9rem;line-height:1.8;color:#6b7280;padding:0 0 20px">Пишіть у Telegram або телефонуйте. Відповідаємо протягом 15 хвилин у робочий час. Перший огляд — безкоштовно.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+    <script>
+    (function(){
+      document.querySelectorAll('#faq details').forEach(function(d){
+        d.addEventListener('toggle',function(){
+          var sym=d.querySelector('summary span');
+          if(sym)sym.textContent=d.open?'−':'+';
+        });
+      });
+    })();
+    </script>
 
     <!-- ─── CTA ─── -->
     <section class="cta-section" aria-labelledby="cta-title">
